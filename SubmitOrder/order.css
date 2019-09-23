@@ -1,0 +1,95 @@
+#top {
+    padding: 6% 0;
+}
+
+.pic {
+    height: 300px;
+    border: 2px solid red;
+    background-image: url("images/tom1.png");
+}
+
+.container-fluid {
+    padding: 0 10%;
+    
+}
+
+.navbar {
+    border: 2px solid gray;
+}
+
+.nav-item {
+    border: 1px solid whitesmoke;
+}
+
+#box {
+    background-color: antiquewhite;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+
+.push {
+    margin-left: auto;
+    font-size: 1.5rem;
+}
+
+#outer {
+    
+    margin-top: 2rem;
+    height: 400px;
+    display: flex;
+}
+
+#box2 {
+    border: 1px solid green;
+}
+
+#box1 {
+    width: 70%;
+    display: flex;
+}
+
+#box2 {
+    width: 25%;
+    margin-left: 5%;
+}
+
+.task {
+    border: 1px solid black;
+    width: 30%;
+    height: 200px;
+    
+}
+
+.contact {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment {
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maintenance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box3 {
+    background-color: gray;
+    padding: 10px 10px;
+}
+
+#box4 {
+    padding: 20px 10px;
+}
+

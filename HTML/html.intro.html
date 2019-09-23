@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML Intro</title>
+
+    <style>
+        /*  This is a comment */
+
+        /*Tag selector*/
+
+        li {
+            font-style: italic;
+            color: green;
+        }
+
+        /* Class selector*/
+    .special {
+        border: 2px dotted palevioletred;
+        border-radius: 5px;
+    }
+
+    /*
+    [checked] {
+        background-color: green;
+    }*/
+
+    /* ID Selector */
+
+    #unordered {
+        color: yellow !important;
+    }
+
+    /* various other selectors */
+    /* for all child li of element with */
+    #unordered li {
+        color: yellow;
+    }
+
+    /* for all labels following a checked checkbox input */
+    input[type="checkbox"]:checked + label{
+        background-color: blue;
+        text-align: right;
+    }
+
+    </style>
+</head>
+<body>
+    <!-- This is a comment
+      The body tag is where all content to be displayed in the window exists-->
+
+    <span>Is this a top level heading? </span>
+    <hr>
+
+    <h1 style="background-color: red">Hello</h1>
+
+    <h3 class="special">hello</h3>
+        <h5 class="special">Hello</h5>
+    <h1 style="background-color: rgba(166, 255, 0, 0.432)">Hello!</h1>
+
+    <h4>List: </h4>
+    <ul id="unordered" class="myThings">
+        <li>milk</li>
+        <li>eggs</li>
+        <li>bread</li>
+        <li>hummus</li>
+    </ul><hr>
+
+    <ol id="ordered" class="myThings">
+        <li>apple</li>
+        <li>bannaa</li>
+    </ol>
+
+    <h4>Table</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Geneis</td>
+                <td>Bond</td>
+                <td>abcgdf</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+
+    <iframe src="https://www.revature.com" frameborder="5px"></iframe>
+
+    <input type="checkbox" id="trueOrFalse" value="val"/>
+    <label for="val">Checkbox Example</label>
+
+    <br>
+
+    <h3>Forms</h3>
+    <form action="test" method="GET">
+
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="Submit">
+
+
+
+
+    </form>
+</body>
+</html>

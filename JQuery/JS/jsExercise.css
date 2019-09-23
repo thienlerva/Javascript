@@ -1,0 +1,9 @@
+#title {
+    text-align: center;
+    color: blue;
+}
+
+#fibInput, #bubbleInput {
+    width: 200px;
+    
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+
+        
+
+                <div>
+                    Shape: <select id="shape">
+                            <option value="square">Square</option>
+                            <option value="triangle">Triangle</option>
+                            <option value="diamond">Diamond</option>
+                    </select>
+
+                    Height: <input type="number" id="height">
+                    Character:<input type="text" id="character"><br>
+
+                </div>
+
+                <button id="print">Print shape</button>
+
+                <h3 id="shapeOutput">Here is the shape</h3>
+    
+                <p id="demo"></p>
+
+                <button id="checkPal">Check Palindrome</button>
+
+
+                <!--<button onclick="document.getElementById("showdate").innerHTML=Date()">The date is</button>-->
+                <button onclick="displayDate()">Click for date</button>
+
+                <p id="showdate"></p>
+                <p id="showShape"></p>
+
+                <input type="text" id="fname" onchange="upperCase()">
+                <p id="palindromeResult">Palindrome result here</p>
+
+    <script>
+
+        
+        $('#checkPal').on('click', function(){
+            let str = $('#character').val();
+            
+            $('#palindromeResult').html(palindrome(str));
+        });
+
+        function upperCase() {
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+
+        function displayDate() {
+            document.getElementById("showdate").innerHTML= Date();
+        }
+
+        var shapeValue = document.getElementById('shape').value;
+        var heightValue = document.getElementById('height').value;
+        var characterValue= document.getElementById('character').value;
+
+        document.getElementById('print').addEventListener('click', runShape);
+
+        function printShape(height) {
+
+            for(let i = 0; i < height; i++) {
+                var row = '';
+                for(let j=0; j <= i; j++){
+                    row += '*';
+                }
+                console.log(row);
+            }
+           
+        }
+
+        function runShape() {
+
+            var heightValue = document.getElementById('height').value;
+            document.getElementById('shapeOutput').innerHTML = printShape(heightValue);
+            //var characterValue= document.getElementById('character').value;
+            // let arr = characterValue.split(',');
+            // let numArr = new Array(arr.length);
+            // for(let i = 0; i< arr.length; i++) {
+            //     numArr[i] = Number(arr[i]);
+            // }
+
+            //document.getElementById('shapeOutput').innerHTML = deleteElement(extractStringArray(characterValue));
+        }
+
+        function runPalindrome() {
+            var characterValue= document.getElementById('character').value;
+            document.getElementById('shapeOutput').innerHTML = palindrome(characterValue);
+        }
+
+        function deleteElement(arr) {
+            console.log(arr.length);
+            console.log(arr.toString());
+            delete arr[2];
+            console.log(arr.toString());
+            console.log(arr.length);
+        }
+
+        function extractStringArray(arr) {
+            let strArr = arr.split(',');
+            let numArr = new Array(strArr.length);
+            for(let i = 0; i< strArr.length; i++) {
+                numArr[i] = Number(strArr[i]);
+            }
+            return numArr;
+        }
+
+        var myVar = setInterval(function(){
+            var d = new Date();
+            document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+        }, 1000);
+
+// function myTimer() {
+//     var d = new Date();
+//     document.getElementById("demo").innerHTML = d.toLocaleTimeString(); 
+
+// }
+
+function reverseString(str) {
+
+var result ="";
+var index = str.length -1;
+for(index; index >= 0; index--) {
+    result += str.charAt(index);
+}
+return result;
+}
+
+function palindrome(str) {
+    var answer;
+    if(str===reverseString(str)) answer = "Yes";
+    else answer = "No";
+    return answer;
+}
+
+function evenNumber(number) {
+    let quotient = number/2;
+    quotient = Math.round(quotient);
+    if(number == quotient * 2) return number + " is even number."
+    else return number + " is odd number";
+}
+
+
+
+    </script>
+</body>
+</html>

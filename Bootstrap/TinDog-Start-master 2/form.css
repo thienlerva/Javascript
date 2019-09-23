@@ -1,0 +1,28 @@
+#top {
+    padding-top: 2%;
+    color: white;
+    
+}
+
+.nav-item {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-right: 1px solid black;
+}
+
+.form-section {
+    padding: 15% 35%;
+}
+
+#button {
+    border: 1px solid red;
+    
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit, .register {
+    margin: 0 1rem;
+}

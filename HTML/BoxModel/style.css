@@ -1,0 +1,15 @@
+.boxmodel {
+    border: 5px solid yellow;
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-gap: 20px;
+}
+

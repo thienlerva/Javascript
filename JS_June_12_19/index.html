@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="title">JavaScript Exercise</div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                
+                <div class="box 1">
+                    <h3>Fibonacci number</h3>
+                    <input type="number" id="fiboInput" class="input">
+                    <button id="fiboSubmit" class="btn btn-primary">Submit</button>
+                    <h4 id="fiboOutput"></h4>
+                </div>
+        
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="box 2" id="timeOutput"></div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="box 3">
+                    <h3>Bubble Sort</h3>
+                    <input type="text" id="bubbleInput" class="input">
+                    <button id="bubbleSubmit" class="btn btn-secondary">Submit</button>
+                    <h4 id="bubbleOutput"></h4>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="box box-4">
+                    <h3>Reverse String</h3>
+                    <input type="text" id="reverseInput" class="input">
+                    <button id="reverseSubmit" class="btn btn-warning">Submit</button>
+                    <h4 id="reverseOutput"></h4>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                
+                <ul id="clock"><img src="images/clockface.jpg">
+                    <li id="sec"></li>
+                    <li id="hour"></li>
+                    <li id="min"></li>
+                </ul>
+                
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="box 6">
+                    <h3>Factorial</h3>
+                    <input type="number" id="facInput" class="input">
+                    <button type="submit" id="facSubmit" class="btn btn-danger">Submit</button>
+                    <h4 id="facOutput"></h4>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="box 7">
+                    <h3>Even Number</h3>
+                    <input type="number" id="evenInput" class="input">
+                    <button type="submit" id="evenSubmit" class="btn btn-info">Submit</button>
+                    <h4 id="evenOutput"></h4>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="box 8">
+                    <h3>Palindrome</h3>
+                    <input type="text" id="palindromeInput" class="input">
+                    <button type="submit" id="palindromeSubmit" class="btn btn-success">Submit</button>
+                    <h4 id="palindromeOutput"></h4>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="box 9">
+                    <h3>Person information</h3>
+                    <label>Name:</label>
+                    <input type="text" id="nameInput" class="input"><br>
+                    <label>Age:</label>
+                    <input type="number" id="ageInput" class="input"><br>
+                    <button type="submit" id="personSubmit" class="btn btn-dark">Submit</button>
+                    <h4 id="personOutput"></h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="exercise.js"></script>
+</body>
+</html>

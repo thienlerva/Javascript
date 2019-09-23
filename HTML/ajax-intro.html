@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+ <body>
+    
+    
+    <hr>
+    <h4>Leverage AJAX to Use the Force</h4>
+    <input type = "number" id = "swID" class = "form-control col-4">
+    <h6>Welcome to the force <span id = "output" ></span></h6>
+    <button id = "go" class = "btn btn-primary">Go!</button>
+    
+    <script>
+
+       // window.onload = function() {
+
+            $('#go').on('click', function(){
+
+                useTheForce();
+                doAjaxWithjQuery();
+
+            });
+
+       // }
+
+        function useTheForce() {
+
+            //AJAX!
+
+            //STEP 1 - create the XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+
+            /*STEP 2 - define functionality for response
+                - this does not necessarily have to be written second, but it is important
+                to note that it will not be carried out synchronously
+            */
+           xhr.onreadystatechange = function() {
+               console.log(xhr.readyState);
+               console.log(xhr.status);
+               if(xhr.readyState == 4 && xhr.status >= 200 && xhr.status < 300) {
+
+                   //define functionality for response
+                   //this is the ONLY PLACE you should be manipulating your response
+                   console.log(xhr.responseText);
+                   globalperson = JSON.parse(xhr.responseText);
+                   document.getElementById("output").innerHTML = globalperson.name;
+
+               }
+           }
+
+           //STEP 3 - open request
+           var id = $('#swID').val();
+           var url = `https://swapi.co/api/people/${id}/`;
+           xhr.open('GET', url, true);
+
+           //STEP 4 - send request
+           //xhr.send(body); where param is request body.. which GET requests do not have
+           xhr.send(); 
+
+           console.log("SENT REQUEST " + xhr.responseText);
+
+        }
+
+        // AJAX with jQuery
+        function doAjaxWithjQuery() {
+
+            console.log('TESTING OUR jQuery method')
+            $.ajax({
+
+                type: 'GET', 
+                url: `https://swapi.co/api/people/${$('#swID').val()}`,
+                //What happens upon a successful response from the server:
+                success: function(response, status) {
+
+                    globalSW = response;
+                    console.log(response);
+                    console.log(status);
+
+                },
+                error: function(status, statusText) {
+
+                    console.log(`Error: ${status}: ${statusText}`);
+
+                }
+
+
+            })
+
+        }
+
+    </script>
+     
+ </body>
+</html> 
